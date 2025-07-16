@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CSS Absolute vs Relative Sizing</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 30px;
+      max-width: 900px;
+      margin: auto;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    h1, h2 {
+      text-align: center;
+    }
+
+    section {
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 30px 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .example-box {
+      background: #4a90e2;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 15px;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .code {
+      background: #f0f0f0;
+      font-family: monospace;
+      padding: 10px;
+      border-radius: 6px;
+      overflow-x: auto;
+      margin-top: 10px;
+    }
+
+    ul {
+      margin: 10px 0 0 20px;
+    }
+
+    @media (max-width: 600px) {
+      .example-box {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>CSS Absolute vs Relative Sizing</h1>
+  <p style="text-align:center; max-width:600px; margin:auto;">
+    This page explains the differences between <strong>absolute</strong> and <strong>relative</strong> units in CSS,
+    with examples and class notes.
+  </p>
+
+  <!-- Absolute Sizing -->
+  <section>
+    <h2>🔹 Absolute or Fixed Sizes</h2>
+    <p>
+      As the name suggests, these sizes stay fixed on all screens. For example, setting <code>22px</code> font size will look the same on desktops, tablets, and mobiles.
+    </p>
+    <ul>
+      <li>Inch (<code>in</code>)</li>
+      <li>Centimeter (<code>cm</code>)</li>
+      <li>Millimeter (<code>mm</code>)</li>
+      <li>Pixel (<code>px</code>)</li>
+      <li>Point (<code>pt</code>)</li>
+      <li>Pica (<code>pc</code>)</li>
+    </ul>
+
+    <p><strong>Relation between fixed sizes:</strong></p>
+    <div class="code">
+      1in = 2.54cm = 25.4mm = 96px = 72pt = 6pc
+    </div>
+
+    <p><strong>Note:</strong> Inches and cm can be imprecise on screens; pixels (<code>px</code>) are preferred in web development.</p>
+
+    <div class="code">
+      width: 200px;<br /> height: 50px;
+    </div>
+    <div class="example-box" style="width: 200px; height: 50px;">
+      200px × 50px
+    </div>
+  </section>
+
+  <!-- Relative Sizing -->
+  <section>
+    <h2>🔸 Relative Sizes</h2>
+    <p>
+      These are flexible units that scale based on their parent element or screen size. Best for responsive layouts.
+    </p>
+    <ul>
+      <li><code>%</code> – Percentage of parent</li>
+      <li><code>em</code> – Relative to parent font size</li>
+      <li><code>rem</code> – Relative to root font size (<code>html</code>)</li>
+      <li><code>vw</code> – 1% of viewport width</li>
+      <li><code>vh</code> – 1% of viewport height</li>
+    </ul>
+
+    <p><strong>% Size:</strong></p>
+    <p>Gives a size relative to the parent container.</p>
+
+    <p><strong>rem:</strong> 1rem = 16px (default browser root size)</p>
+
+    <div class="code">
+      width: 50%;<br />
+      height: 40px;
+    </div>
+    <div class="example-box" style="width: 50%; height: 40px;">
+      50% of parent
+    </div>
+
+    <div class="code">
+      font-size: 2em;
+    </div>
+    <div class="example-box" style="font-size: 2em;">
+      2em (relative to parent)
+    </div>
+
+    <div class="code">
+      font-size: 1.5rem;
+    </div>
+    <div class="example-box" style="font-size: 1.5rem;">
+      1.5rem (relative to root)
+    </div>
+
+    <div class="code">
+      width: 40vw;<br />
+      height: 10vh;
+    </div>
+    <div class="example-box" style="width: 40vw; height: 10vh;">
+      Viewport Units
+    </div>
+  </section>
+
+  <!-- Summary -->
+  <section>
+    <h2>📌 Summary: When to Use What?</h2>
+    <ul>
+      <li><strong>Absolute units</strong> (<code>px</code>, <code>cm</code>) give fixed sizes, good for print or fixed layouts.</li>
+      <li><strong>Relative units</strong> (<code>%</code>, <code>em</code>, <code>vw</code>, <code>rem</code>) are preferred for responsive designs.</li>
+      <li><code>rem</code> ensures consistent font sizing.</li>
+      <li><code>vw</code>/<code>vh</code> help build fluid, screen-based layouts.</li>
+    </ul>
+  </section>
+
+</body>
+</html>

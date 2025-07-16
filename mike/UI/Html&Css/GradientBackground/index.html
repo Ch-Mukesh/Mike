@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Gradient Examples with Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      margin: 0;
+      padding: 40px;
+      color: #333;
+    }
+
+    h1, h2 {
+      text-align: center;
+    }
+
+    .gradient-section {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .gradient-box {
+      height: 150px;
+      border: 1px solid #ccc;
+      margin: 20px 0;
+      border-radius: 6px;
+    }
+
+    .code {
+      font-family: monospace;
+      background: #eee;
+      padding: 10px;
+      display: block;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      overflow-x: auto;
+    }
+
+    .description {
+      margin-top: 10px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>CSS Gradient Examples</h1>
+  <p style="text-align:center;">Visual examples of <strong>linear</strong>, <strong>radial</strong>, and <strong>conic</strong> gradients with full details.</p>
+
+  <!-- Linear Gradient -->
+  <div class="gradient-section">
+    <h2>Linear Gradient</h2>
+    <div class="code">background: linear-gradient(to right, #ff416c, #ff4b2b);</div>
+    <div class="gradient-box" style="background: linear-gradient(to right, #ff416c, #ff4b2b);"></div>
+    <p class="description">
+      A <strong>linear gradient</strong> transitions colors along a straight line. You can specify the direction:
+      <code>to right</code>, <code>to bottom</code>, <code>45deg</code>, etc. You can add multiple color stops.
+    </p>
+  </div>
+
+  <!-- Linear Gradient (Angle) -->
+  <div class="gradient-section">
+    <h2>Linear Gradient with Angle</h2>
+    <div class="code">background: linear-gradient(135deg, #00c6ff, #0072ff);</div>
+    <div class="gradient-box" style="background: linear-gradient(135deg, #00c6ff, #0072ff);"></div>
+    <p class="description">
+      Here, the gradient moves diagonally at a <strong>135-degree angle</strong> from top left to bottom right.
+    </p>
+  </div>
+
+  <!-- Radial Gradient -->
+  <div class="gradient-section">
+    <h2>Radial Gradient</h2>
+    <div class="code">background: radial-gradient(circle, #f7971e, #ffd200);</div>
+    <div class="gradient-box" style="background: repeating-radial-gradient(circle, #f7971e, #ffd200);"></div>
+    <p class="description">
+      A <strong>radial gradient</strong> radiates from a central point. The shape can be a <code>circle</code> or <code>ellipse</code>. 
+      You can also specify position and multiple color stops.
+    </p>
+  </div>
+
+  <!-- Radial Gradient with Position -->
+  <div class="gradient-section">
+    <h2>Radial Gradient with Position</h2>
+    <div class="code">background: radial-gradient(circle at top left, #00f2fe, #4facfe);</div>
+    <div class="gradient-box" style="background: radial-gradient(circle at top left, #00f2fe, #4facfe);"></div>
+    <p class="description">
+      This starts the radial gradient from the <strong>top left corner</strong> using <code>circle at top left</code>.
+    </p>
+  </div>
+
+  <!-- Conic Gradient -->
+  <div class="gradient-section">
+    <h2>Conic Gradient</h2>
+    <div class="code">background: conic-gradient(from 0deg, red, yellow, green, blue, red);</div>
+    <div class="gradient-box" style="background: conic-gradient(from 0deg, red, yellow, green, blue, red);"></div>
+    <p class="description">
+      A <strong>conic gradient</strong> rotates colors around a center point, like a pie chart. 
+      You can control the starting angle with <code>from Xdeg</code>.
+      Not supported in older browsers like Internet Explorer.
+    </p>
+  </div>
+
+</body>
+</html>

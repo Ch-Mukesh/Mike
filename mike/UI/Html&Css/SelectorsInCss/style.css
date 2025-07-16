@@ -1,0 +1,34 @@
+/* .parent .child {
+  color: red;
+} */
+
+
+.parent > .child {
+  color: blue;
+}
+
+
+
+h2 + p {
+  color: green;
+}
+
+
+h2 ~ p {
+  color: orange;
+}
+
+
+
+p::before {
+  content: "👉 ";
+  color: orange;
+}
+
+p::after {
+  content: " ✔";
+  color: green;
+}
+
+
+

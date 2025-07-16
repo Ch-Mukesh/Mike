@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 Multimedia Full Feature Demo</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 20px;
+      background-color: #f5f5f5;
+    }
+    figure {
+      background: #fff;
+      padding: 15px;
+      margin: 30px 0;
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    figcaption {
+      margin-top: 10px;
+      font-style: italic;
+      text-align: center;
+    }
+    audio, video {
+      display: block;
+      margin: 0 auto;
+    }
+    iframe {
+      display: block;
+      margin: 0 auto;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Full Multimedia Tag Demonstration</h1>
+
+  <!-- AUDIO Example with All Attributes -->
+  <figure>
+    <figcaption>🎵 Audio Example with All Attributes</figcaption>
+    <audio 
+      controls 
+      autoplay 
+      loop 
+      muted 
+      preload="auto">
+      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+      <source src="example.ogg" type="audio/ogg">
+      Your browser does not support the <code>audio</code> tag.
+    </audio>
+    <figcaption>
+      Attributes used: <code>controls, autoplay, loop, muted, preload="auto"</code>
+    </figcaption>
+  </figure>
+
+  <!-- VIDEO Example with All Attributes -->
+  <figure>
+    <figcaption>🎬 Video Example with All Attributes</figcaption>
+    <video 
+      width="640" 
+      height="360" 
+      controls 
+      autoplay 
+      loop 
+      muted 
+      poster="https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217" 
+      preload="auto">
+      <source src="https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4" type="video/mp4">
+      <source src="example.webm" type="video/webm">
+      Your browser does not support the <code>video</code> tag.
+    </video>
+    <figcaption>
+      Attributes used: <code>controls, autoplay, loop, muted, poster, preload="auto"</code>
+    </figcaption>
+  </figure>
+
+  <!-- IFRAME Example with Common Attributes -->
+  <figure>
+    <figcaption>📺 YouTube Video Embed with Iframe</figcaption>
+    <iframe 
+      width="640" 
+      height="360" 
+      src="https://www.youtube.com/embed/63aSI64OrL8?autoplay=1&mute=1&loop=1&playlist=63aSI64OrL8" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      allowfullscreen 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade" 
+      title="YouTube video player">
+    </iframe>
+    <figcaption>
+      Attributes used: <code>src, width, height, allowfullscreen, allow, loading, referrerpolicy, title</code><br>
+      With YouTube query params: <code>autoplay=1, mute=1, loop=1, playlist=...</code>
+    </figcaption>
+  </figure>
+
+</body>
+</html>

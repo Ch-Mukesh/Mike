@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS background-clip Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .box-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .box {
+      width: 250px;
+      padding: 20px;
+      border: 6px solid #e63946;
+      font-size: 16px;
+      font-weight: bold;
+      color: #000;
+      background: linear-gradient(135deg, #90ee90, #1e90ff);
+      text-align: center;
+    }
+
+    .border-box {
+      background-clip: border-box;
+    }
+
+    .padding-box {
+      background-clip: padding-box;
+    }
+
+    .content-box {
+      background-clip: content-box;
+    }
+
+    .clip-text {
+      font-size: 50px;
+      font-weight: bold;
+      background: linear-gradient(to right, #ff416c, #ff4b2b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text; /* For completeness */
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .label {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .section {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>CSS <code>background-clip</code> Demonstration</h1>
+
+  <div class="section">
+    <div class="box-container">
+      <div>
+        <div class="box border-box">border-box</div>
+        <div class="label">Background extends under the border.</div>
+      </div>
+      <div>
+        <div class="box padding-box">padding-box</div>
+        <div class="label">Background stops at the border edge.</div>
+      </div>
+      <div>
+        <div class="box content-box">content-box</div>
+        <div class="label">Background only inside content area.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="clip-text">Clipped Text</div>
+    <div class="label">Text filled with gradient using <code>background-clip: text</code>.</div>
+  </div>
+
+</body>
+</html>
