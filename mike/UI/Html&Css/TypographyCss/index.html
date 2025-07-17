@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typography in CSS - Visual Learning</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      padding: 40px;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 3rem;
+      text-align: center;
+      color: #4CAF50;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+
+    h2, h3 {
+      font-size: 2.5rem;
+      color: #4a90e2;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #4a90e2;
+      padding-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 20px;
+      line-height: 1.6;
+      text-align: justify;
+      letter-spacing: 0.5px;
+      text-indent: 30px;
+    }
+
+    /* Code Styling */
+    code {
+      background-color: #f1f1f1;
+      padding: 0.2rem 0.4rem;
+      font-family: 'Courier New', monospace;
+      color: #d6336c;
+      font-size: 1rem;
+      border-radius: 4px;
+    }
+
+    /* Text Shadow Example */
+    .text-shadow-example {
+      font-size: 2rem;
+      color: #333;
+      text-shadow: 5px 3px 5px rgba(0, 0, 0, 0.2);
+      margin-bottom: 20px;
+    }
+
+    .text-shadow-advanced {
+      font-size: 2rem;
+      color: #333;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), -2px -2px 4px rgba(0, 0, 0, 0.4);
+      margin-bottom: 20px;
+    }
+
+    /* Cursor Example */
+    .cursor-example {
+      cursor: url('logo.png'), auto;
+      color: #007bff;
+      font-weight: bold;
+    }
+
+    /* Text Transformations */
+    .uppercase {
+      text-transform: uppercase;
+      font-weight: bold;
+      color: #4CAF50;
+    }
+
+    .line-through {
+      text-decoration: line-through;
+      color: #e74c3c;
+    }
+
+    .underline {
+      text-decoration: underline;
+      color: #ff6347;
+    }
+
+    /* Lists Styling */
+    ul, ol {
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    /* Blockquote Styling */
+    blockquote {
+      font-size: 1.2rem;
+      color: #444;
+      border-left: 5px solid #4CAF50;
+      padding-left: 20px;
+      font-style: italic;
+      background-color: #f9f9f9;
+      margin: 20px 0;
+    }
+
+    /* Small Text */
+    small {
+      font-size: 0.9rem;
+      color: #7d8e98;
+    }
+
+    /* Hover Effects for Interactive Learning */
+    a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    a:hover {
+      color: #ff6347;
+      text-decoration: underline;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Typography in CSS</h1>
+
+    <h2>Font Families</h2>
+    <p>The default font style of any text in browsers is <code>Times New Roman</code>. You can change it using the <code>font-family</code> property.</p>
+    <p>There are two main font families:</p>
+    <ul>
+      <li><strong>Serif:</strong> Fonts with small lines or decorations at the end of letters, like <em>Times New Roman</em>.</li>
+      <li><strong>Sans-Serif:</strong> Fonts without these decorations, like <em>Arial</em>.</li>
+    </ul>
+    <p>Example of a custom font family:</p>
+    <p><code>font-family: 'Gill Sana', sans-serif;</code></p>
+
+    <h2>Text Shadow</h2>
+    <p>The <code>text-shadow</code> property applies shadow to text. It takes four parameters:</p>
+    <ul>
+      <li><strong>h-offset:</strong> Horizontal offset (positive for right, negative for left).</li>
+      <li><strong>v-offset:</strong> Vertical offset (positive for bottom, negative for top).</li>
+      <li><strong>blur:</strong> How much blur you want.</li>
+      <li><strong>color:</strong> The color of the shadow.</li>
+    </ul>
+    <p>Example of a simple text shadow:</p>
+    <div class="text-shadow-example">This is a basic text shadow example.</div>
+    <code>text-shadow: 5px 3px 5px blue;</code>
+
+    <h2>Advanced Text Shadow Example</h2>
+    <p>Advanced use of <code>text-shadow</code> allows multiple shadows for more complex effects. Here's an example:</p>
+    <div class="text-shadow-advanced">This is an advanced text shadow example.</div>
+    <code>text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), -2px -2px 4px rgba(0, 0, 0, 0.4);</code>
+    <p>This effect uses two shadows with different offsets and opacity levels to create a 3D-like appearance on the text.</p>
+
+    <h2>Cursor in CSS</h2>
+    <p>By default, browsers use two types of cursors:</p>
+    <ul>
+      <li><strong>Normal Cursor:</strong> The arrow cursor.</li>
+      <li><strong>Pointer Cursor:</strong> The hand symbol cursor (used for links).</li>
+    </ul>
+    <p>If you want to use a custom cursor, you can define it:</p>
+    <code>cursor: url('logo.png'), auto;</code>
+    <p>You can also change the cursor for the entire website using the universal selector:</p>
+    <code>* { cursor: url('cursor.png'), auto; }</code>
+    <p>Here’s an example of a cursor using an image:</p>
+    <p class="cursor-example">Hover over me to see the custom cursor!</p>
+
+    <h2>Text Transformations</h2>
+    <p>Text transformations are done using the <code>text-transform</code> property:</p>
+    <ul>
+      <li><span class="uppercase">Uppercase Text</span>: Makes all letters uppercase.</li>
+      <li><span class="underline">Underlined Text</span>: Adds an underline to the text.</li>
+      <li><span class="line-through">Line-through Text</span>: Adds a line through the text.</li>
+    </ul>
+
+    <h2>Blockquote</h2>
+    <p>Blockquotes are used for quoting text. They are often styled with indentation and italicized text:</p>
+    <blockquote>
+      "This is a blockquote, used for displaying quoted text in a distinct style."
+    </blockquote>
+
+    <h2>Lists</h2>
+    <p>Lists in HTML can be either ordered or unordered:</p>
+    <ul>
+      <li>Unordered List Item 1</li>
+      <li>Unordered List Item 2</li>
+    </ul>
+    <ol>
+      <li>Ordered List Item 1</li>
+      <li>Ordered List Item 2</li>
+    </ol>
+
+    <h2>Small Text</h2>
+    <p>Small text is useful for things like copyright or disclaimers:</p>
+    <small>This is an example of small text.</small>
+
+    <h2>Additional CSS Text Properties</h2>
+    <h3>Vertical Align</h3>
+    <p>The <code>vertical-align</code> property aligns an element vertically:</p>
+    <code>vertical-align: top;</code>
+
+    <h3>Font-Family</h3>
+    <p>The <code>font-family</code> property is used to change the font type. Here's an example:</p>
+    <code>font-family: 'Gill Sana', sans-serif;</code>
+
+    <h3>Text Shadow (Advanced Example)</h3>
+      <p>
+        The <code>text-shadow</code> property allows you to apply multiple
+        shadows to create more complex effects:
+      </p>
+      <code
+        >text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), -2px -2px 4px rgba(0, 0,
+        0, 0.4);</code
+      >
+      <p>This example creates a layered shadow effect:</p>
+      <ul>
+        <li>
+          The first shadow is offset by 2px to the right and 2px down, with a
+          blur and lighter opacity.
+        </li>
+        <li>
+          The second shadow is offset by 2px to the left and 2px up, with a blur
+          and darker opacity.
+        </li>
+      </ul>
+      <p>This creates a 3D effect on the text.</p>
+
+  </div>
+
+</body>
+</html>
