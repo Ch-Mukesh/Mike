@@ -22,8 +22,33 @@ class B {
     }
 
 
+class A{
+	static int a = 10;
+	int x = 20;
+
+	void display(){
+		System.out.println(a+" "+this);
+		System.out.println(x);
+		System.out.println(this);
+	}
+
+	static void hi(){
+		//System.out.println(x);
+	}
+}
+
 public class Test {
     public static void main(String[] args) {
+		System.out.println(A.a);
+		A a1 = new A();
+		a1.display();
+
+		// int String = 10;
+		// System.out.println(String);
+
+		// int main = 10;
+		// System.out.println(main);
+
 
     }
 }
