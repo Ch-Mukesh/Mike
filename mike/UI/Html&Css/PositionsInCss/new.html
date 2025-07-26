@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CSS Position Property - Deep Dive</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.8;
+      padding: 20px;
+      margin: 0;
+      background: #f7f9fc;
+    }
+
+    h1, h2 {
+      color: #2c3e50;
+    }
+
+    .section {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .demo-box {
+      padding: 20px;
+      color: #fff;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+    }
+
+    .static-box {
+      background: #95a5a6;
+      position: static;
+    }
+
+    .relative-box {
+      background: #3498db;
+      position: relative;
+      top: 20px;
+      left: 30px;
+    }
+
+    .absolute-parent {
+      position: relative;
+      background: #ecf0f1;
+      height: 150px;
+    }
+
+    .absolute-box {
+      position: absolute;
+      background: #e67e22;
+      top: 20px;
+      left: 30px;
+    }
+
+    .fixed-box {
+      position: fixed;
+      background: #c0392b;
+      bottom: 10px;
+      right: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      color: white;
+      z-index: 999;
+    }
+
+    .sticky-header {
+      position: sticky;
+      top: 0;
+      background: #27ae60;
+      padding: 10px;
+      color: white;
+      z-index: 10;
+    }
+
+    .spacer {
+      height: 600px;
+      background: #ecf0f1;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    code {
+      background: #eee;
+      padding: 2px 4px;
+      border-radius: 4px;
+      font-size: 0.95rem;
+    }
+
+    ul.custom-list {
+      list-style-type: square;
+      color: #34495e;
+      padding-left: 25px;
+    }
+
+    pre {
+      background: #f1f1f1;
+      padding: 15px;
+      border-left: 4px solid #3498db;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📘 Deep Dive into CSS <code>position</code> Property</h1>
+
+  <div class="section">
+    <h2>1. Static (Default Position)</h2>
+    <p>
+      Every HTML element is <strong>positioned static</strong> by default. It means the element follows the normal document flow and cannot be moved using <code>top</code>, <code>left</code>, etc.
+    </p>
+    <div class="demo-box static-box">I am static. I sit where I'm told in the flow.</div>
+    <pre><code>position: static;</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>2. Relative Position</h2>
+    <p>
+      An element with <code>position: relative</code> is moved relative to its original position. The space it occupied in the document flow is preserved.
+    </p>
+    <div class="demo-box relative-box">I am relatively shifted right & down</div>
+    <pre><code>
+position: relative;
+top: 20px;
+left: 30px;
+</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>3. Absolute Position</h2>
+    <p>
+      With <code>position: absolute</code>, the element is removed from the document flow and is positioned relative to the <strong>nearest ancestor with a position</strong> other than <code>static</code>. If none, it will use the <code>&lt;html&gt;</code> (viewport) as reference.
+    </p>
+    <div class="absolute-parent">
+      <div class="demo-box absolute-box">I am absolutely positioned in parent</div>
+    </div>
+    <pre><code>
+.parent {
+  position: relative;
+}
+.child {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+}
+</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>4. Fixed Position</h2>
+    <p>
+      A <code>fixed</code> element is removed from normal flow and <strong>always stays in the same place</strong> relative to the viewport, even while scrolling. Common use: sticky footer, fixed navigation, alerts.
+    </p>
+    <div class="fixed-box">I'm always in bottom-right!</div>
+    <pre><code>
+position: fixed;
+bottom: 10px;
+right: 10px;
+</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>5. Sticky Position</h2>
+    <p>
+      A <code>sticky</code> element behaves like <code>relative</code> until it crosses a scroll threshold, then it behaves like <code>fixed</code>. It's useful for sticky headers.
+    </p>
+    <div class="sticky-header">I stick to top when scrolling starts!</div>
+    <div class="spacer">
+      Scroll this section to see the sticky behavior.
+    </div>
+    <pre><code>
+position: sticky;
+top: 0;
+</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>6. Styling Unordered Lists with CSS</h2>
+    <p>
+      HTML doesn't provide much styling control on lists by default. Using CSS, you can modify <code>list-style-type</code>, use images, and even adjust spacing.
+    </p>
+    <ul class="custom-list">
+      <li>Custom styled bullet</li>
+      <li>Using square bullets</li>
+      <li>Better indentation</li>
+    </ul>
+    <pre><code>
+ul.custom-list {
+  list-style-type: square;
+  padding-left: 25px;
+  color: #34495e;
+}
+</code></pre>
+  </div>
+
+</body>
+</html>

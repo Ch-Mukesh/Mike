@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Complete CSS Flexbox and Grid Guide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      padding: 30px;
+      background: #f5f7fa;
+      color: #333;
+      line-height: 1.7;
+    }
+
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+
+    section {
+      background: #fff;
+      padding: 25px;
+      margin-bottom: 40px;
+      border-left: 5px solid #3498db;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    code {
+      background: #eee;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+
+    pre {
+      background: #f1f1f1;
+      padding: 10px;
+      overflow-x: auto;
+      border-left: 4px solid #3498db;
+      margin: 10px 0;
+    }
+
+    .demo {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 10px 0;
+    }
+
+    .box {
+      background: #3498db;
+      color: white;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 10px;
+      margin: 10px 0;
+    }
+
+    .grid-box {
+      background: #9b59b6;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 5px;
+    }
+
+    .colored {
+      background: #e67e22;
+    }
+  </style>
+</head>
+<body>
+
+<h1>💡 Complete CSS Flexbox and Grid System Guide</h1>
+
+<!-- FLEXBOX START -->
+<section>
+  <h2>1️⃣ What is Flexbox?</h2>
+  <p>
+    Flexbox (Flexible Box Layout) is a one-dimensional layout method that arranges items in a row or column.
+    It's ideal for distributing space between items and aligning items within a container.
+  </p>
+  <p><strong>Parent Property:</strong> <code>display: flex</code> or <code>inline-flex</code></p>
+</section>
+
+<section>
+  <h2>2️⃣ Flexbox Direction and Wrapping</h2>
+  <p>Control main axis direction with <code>flex-direction</code>:</p>
+  <ul>
+    <li><code>row</code> (default)</li>
+    <li><code>row-reverse</code></li>
+    <li><code>column</code></li>
+    <li><code>column-reverse</code></li>
+  </ul>
+  <pre><code>
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+</code></pre>
+  <div class="demo" style="flex-direction: row;">
+    <div class="box">1</div><div class="box">2</div><div class="box">3</div>
+  </div>
+</section>
+
+<section>
+  <h2>3️⃣ Justify Content</h2>
+  <p>Align items on the <strong>main axis</strong>:</p>
+  <ul>
+    <li><code>flex-start</code></li>
+    <li><code>flex-end</code></li>
+    <li><code>center</code></li>
+    <li><code>space-between</code></li>
+    <li><code>space-around</code></li>
+    <li><code>space-evenly</code></li>
+  </ul>
+  <div class="demo" style="justify-content: space-around;">
+    <div class="box">A</div><div class="box">B</div><div class="box">C</div>
+  </div>
+</section>
+
+<section>
+  <h2>4️⃣ Align Items</h2>
+  <p>Align items on the <strong>cross axis</strong> (perpendicular to main axis):</p>
+  <pre><code>align-items: flex-start | center | flex-end | stretch | baseline;</code></pre>
+  <div class="demo" style="height: 120px; align-items: flex-end;">
+    <div class="box" style="height: 40px;">X</div>
+    <div class="box" style="height: 60px;">Y</div>
+    <div class="box" style="height: 100px;">Z</div>
+  </div>
+</section>
+
+<section>
+  <h2>5️⃣ Align Self</h2>
+  <p>Allows individual items to override <code>align-items</code>:</p>
+  <pre><code>.item { align-self: flex-end; }</code></pre>
+</section>
+
+<section>
+  <h2>6️⃣ Flex Wrap</h2>
+  <p>Allows items to wrap to the next line:</p>
+  <pre><code>flex-wrap: nowrap | wrap | wrap-reverse;</code></pre>
+  <div class="demo" style="flex-wrap: wrap;">
+    <div class="box">1</div><div class="box">2</div><div class="box">3</div>
+    <div class="box">4</div><div class="box">5</div><div class="box">6</div>
+  </div>
+</section>
+
+<section>
+  <h2>7️⃣ Flex Grow, Shrink, Basis</h2>
+  <p>Use <code>flex</code> shorthand: <code>flex: grow shrink basis</code></p>
+  <pre><code>.item { flex: 1 1 200px; }</code></pre>
+</section>
+
+<section>
+  <h2>8️⃣ Order of Items</h2>
+  <p>Change the visual order of items using:</p>
+  <pre><code>.item { order: 2; }</code></pre>
+</section>
+
+<!-- GRID START -->
+<section>
+  <h2>9️⃣ What is CSS Grid?</h2>
+  <p>
+    CSS Grid is a two-dimensional layout system that arranges content in rows and columns.
+  </p>
+  <p><strong>Parent Property:</strong> <code>display: grid</code></p>
+</section>
+
+<section>
+  <h2>🔟 Defining Columns & Rows</h2>
+  <p>Use <code>grid-template-columns</code> and <code>grid-template-rows</code> to define grid tracks:</p>
+  <pre><code>
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+</code></pre>
+  <div class="grid" style="grid-template-columns: repeat(3, 1fr);">
+    <div class="grid-box">1</div>
+    <div class="grid-box">2</div>
+    <div class="grid-box">3</div>
+  </div>
+</section>
+
+<section>
+  <h2>1️⃣1️⃣ Grid Lines & Spanning</h2>
+  <p>
+    Every grid cell has horizontal and vertical lines. You can position and size items by specifying which grid lines they start and end at using <code>grid-column</code> and <code>grid-row</code>.
+  </p>
+  <pre><code>
+.item {
+  grid-column: 1 / 3;  /* Spans from column line 1 to line 3 */
+  grid-row: 1 / 2;     /* Spans from row line 1 to line 2 */
+}
+</code></pre>
+  <p>Alternatively, use the shorthand <code>grid-column: span 2;</code></p>
+</section>
+
+<section>
+  <h2>1️⃣2️⃣ Grid Auto Rows/Columns</h2>
+  <p>
+    When the grid creates new tracks automatically (e.g., when items overflow), you can control their size using:
+  </p>
+  <pre><code>
+.container {
+  grid-auto-rows: 100px;
+  grid-auto-columns: 1fr;
+}
+</code></pre>
+  <p>
+    This ensures all implicitly created rows or columns follow a consistent size rule.
+  </p>
+</section>
+
+<section>
+  <h2>1️⃣3️⃣ Grid Area & Named Areas</h2>
+  <p>
+    You can define areas using <code>grid-area</code> and name them for easy layout using <code>grid-template-areas</code>.
+  </p>
+  <pre><code>
+.container {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar content";
+  grid-template-columns: 1fr 3fr;
+}
+.header  { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.content { grid-area: content; }
+</code></pre>
+  <p>This makes complex layouts easy to read and manage.</p>
+</section>
+
+<section>
+  <h2>1️⃣4️⃣ Grid Alignment</h2>
+  <p>Control alignment of grid items or tracks using:</p>
+  <ul>
+    <li><code>justify-items</code> – horizontal alignment of items in each cell</li>
+    <li><code>align-items</code> – vertical alignment of items in each cell</li>
+    <li><code>place-items</code> – shorthand for both</li>
+    <li><code>justify-content</code> – alignment of the grid as a whole (horizontally)</li>
+    <li><code>align-content</code> – alignment of the grid as a whole (vertically)</li>
+    <li><code>place-content</code> – shorthand for both</li>
+  </ul>
+  <pre><code>
+.container {
+  justify-items: center;
+  align-items: center;
+  justify-content: space-between;
+}
+</code></pre>
+</section>
+
+<section>
+  <h2>1️⃣5️⃣ Real Layout Example (3x3 grid)</h2>
+  <div class="grid" style="grid-template-columns: repeat(3, 1fr);">
+    <div class="grid-box">A</div><div class="grid-box">B</div><div class="grid-box">C</div>
+    <div class="grid-box">D</div><div class="grid-box">E</div><div class="grid-box">F</div>
+    <div class="grid-box">G</div><div class="grid-box">H</div><div class="grid-box">I</div>
+  </div>
+</section>
+
+</body>
+</html>

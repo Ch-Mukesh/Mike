@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Complete Guide to CSS Flexbox and Grid</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 30px;
+      background: #f4f6f8;
+      color: #333;
+      line-height: 1.8;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    section {
+      background: white;
+      padding: 25px;
+      margin-bottom: 40px;
+      border-left: 5px solid #3498db;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    code {
+      background: #eee;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+    pre {
+      background: #f1f1f1;
+      padding: 10px;
+      overflow-x: auto;
+      border-left: 4px solid #3498db;
+      margin: 10px 0;
+    }
+    .demo {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 10px 0;
+    }
+    .box {
+      background: #3498db;
+      color: white;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+    .grid {
+      display: grid;
+      gap: 10px;
+      margin: 10px 0;
+    }
+    .grid-box {
+      background: #9b59b6;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Complete Guide to CSS Flexbox and Grid with All Properties</h1>
+
+<!-- Existing content preserved -->
+
+<section>
+  <h2>Additional Flexbox Property Examples</h2>
+  <h3>justify-content: center</h3>
+  <pre><code>justify-content: center;</code></pre>
+  <div class="demo" style="justify-content: center;">
+    <div class="box">A</div>
+    <div class="box">B</div>
+    <div class="box">C</div>
+  </div>
+
+  <h3>align-items: flex-end</h3>
+  <pre><code>align-items: flex-end;</code></pre>
+  <div class="demo" style="align-items: flex-end; height: 120px;">
+    <div class="box" style="height: 40px;">1</div>
+    <div class="box" style="height: 60px;">2</div>
+    <div class="box" style="height: 100px;">3</div>
+  </div>
+</section>
+
+<section>
+  <h2>Additional Grid Property Examples</h2>
+  <h3>Grid Template Areas</h3>
+  <pre><code>.grid-area-example {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar content";
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto 1fr;
+}</code></pre>
+  <div class="grid" style="grid-template-areas: 'header header' 'sidebar content'; grid-template-columns: 1fr 2fr; grid-template-rows: auto 1fr;">
+    <div class="grid-box" style="grid-area: header; background: #34495e;">Header</div>
+    <div class="grid-box" style="grid-area: sidebar; background: #1abc9c;">Sidebar</div>
+    <div class="grid-box" style="grid-area: content; background: #e67e22;">Content</div>
+  </div>
+</section>
+
+</body>
+</html>
