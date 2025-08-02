@@ -1,0 +1,45 @@
+#card{
+    height: 300px;
+    width: 300px;
+    background-color: transparent;
+    perspective: 2000px;   /*It defines the depth*/
+}
+
+#parent{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+#front{
+    border-radius: 20px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('pancakes-5989136_1280.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+}
+
+#back{
+    border-radius: 20px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+}
+
+#card:hover #parent{
+    transform: rotateY(180deg);
+}
