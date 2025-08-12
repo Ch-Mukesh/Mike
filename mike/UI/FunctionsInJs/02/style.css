@@ -1,0 +1,42 @@
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+.switch {
+    width: 60px;
+    height: 30px;
+    background-color: black;
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+.toggle {
+    width: 28px;
+    height: 100%;
+    background-color: white;
+    border-radius: 15px;
+    position: absolute;
+    border: 2px solid black;
+    transition: transform 0.2s ease;
+}
