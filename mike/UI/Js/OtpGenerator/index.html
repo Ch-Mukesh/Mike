@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    div {
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    button {
+        height: 45px;
+        width: fit-content;
+        border: none;
+        cursor: pointer;
+        padding: 12px;
+        background-color: black;
+        color: white;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        font-family: cursive;
+        border-radius: 10px;
+
+    }
+</style>
+
+<body>
+    <div>
+        <button onclick="generateOtp()">Generate OTP(6)</button>
+        <h1 id="result"></h1>
+    </div>
+
+
+    <script>
+        function generateOtp() {
+            // document.getElementById('result').innerHTML = 203690 + Math.floor(Math.random() * 1000);
+            document.getElementById('result').innerHTML = Math.floor(100000 + Math.random() * 900000);// generate a 6-digit OTP starting from 100000 to 999999, 
+        }
+    </script>
+</body>
+
+</html>
