@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Selectors Guide</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    code {
+      background: #f4f4f4;
+      padding: 2px 5px;
+      border-radius: 4px;
+    }
+    .example {
+      background: #ecf0f1;
+      padding: 10px;
+      border-radius: 8px;
+      margin: 10px 0;
+    }
+    button {
+      background: #3498db;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #2980b9;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>DOM Selectors in JavaScript</h1>
+  <p>The <strong>DOM (Document Object Model)</strong> is a tree-like structure that represents your HTML page in JavaScript. DOM selectors are methods used to find and manipulate elements on a web page.</p>
+
+  <h2>Common DOM Selectors</h2>
+
+  <h3>1. By ID</h3>
+  <div class="example">
+    <p id="idExample">This text will change color when you click the button.</p>
+    <button onclick="document.getElementById('idExample').style.color='red'">Change Color</button>
+  </div>
+  <code>document.getElementById("idExample")</code> — Finds an element by its <code>id</code>.
+
+  <h3>2. By Class</h3>
+  <div class="example">
+    <p class="classExample">Paragraph 1</p>
+    <p class="classExample">Paragraph 2</p>
+    <button onclick="changeClassColor()">Change All to Blue</button>
+  </div>
+  <code>document.getElementsByClassName("classExample")</code> — Returns all elements with the given class.
+
+  <h3>3. By Tag Name</h3>
+  <div class="example">
+    <p>Tag Example 1</p>
+    <p>Tag Example 2</p>
+    <button onclick="changeTagColor()">Make All Paragraphs Green</button>
+  </div>
+  <code>document.getElementsByTagName("p")</code> — Returns all elements with a given tag.
+
+  <h3>4. Using querySelector</h3>
+  <div class="example">
+    <p class="qsExample">First .qsExample element</p>
+    <p class="qsExample">Second .qsExample element</p>
+    <button onclick="document.querySelector('.qsExample').style.fontWeight='bold'">Bold First Only</button>
+  </div>
+  <code>document.querySelector(".qsExample")</code> — Selects the first matching element.
+
+  <h3>5. Using querySelectorAll</h3>
+  <div class="example">
+    <p class="qsaExample">Item 1</p>
+    <p class="qsaExample">Item 2</p>
+    <p class="qsaExample">Item 3</p>
+    <button onclick="document.querySelectorAll('.qsaExample').forEach(e => e.style.color='purple')">Make All Purple</button>
+  </div>
+  <code>document.querySelectorAll(".qsaExample")</code> — Selects all matching elements.
+
+  <h2>Quick Selector Reference</h2>
+  <table border="1" cellpadding="5" style="border-collapse: collapse;">
+    <tr>
+      <th>Method</th>
+      <th>Returns</th>
+      <th>Example</th>
+    </tr>
+    <tr>
+      <td><code>getElementById()</code></td>
+      <td>Single Element</td>
+      <td><code>getElementById("header")</code></td>
+    </tr>
+    <tr>
+      <td><code>getElementsByClassName()</code></td>
+      <td>HTMLCollection</td>
+      <td><code>getElementsByClassName("nav")</code></td>
+    </tr>
+    <tr>
+      <td><code>getElementsByTagName()</code></td>
+      <td>HTMLCollection</td>
+      <td><code>getElementsByTagName("p")</code></td>
+    </tr>
+    <tr>
+      <td><code>querySelector()</code></td>
+      <td>First match</td>
+      <td><code>querySelector(".item")</code></td>
+    </tr>
+    <tr>
+      <td><code>querySelectorAll()</code></td>
+      <td>NodeList</td>
+      <td><code>querySelectorAll("li.active")</code></td>
+    </tr>
+  </table>
+
+  <script>
+    function changeClassColor() {
+      let elements = document.getElementsByClassName("classExample");
+      for (let el of elements) {
+        el.style.color = "blue";
+      }
+    }
+
+    function changeTagColor() {
+      let tags = document.getElementsByTagName("p");
+      for (let tag of tags) {
+        tag.style.color = "green";
+      }
+    }
+  </script>
+
+</body>
+</html>

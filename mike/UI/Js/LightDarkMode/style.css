@@ -1,0 +1,14 @@
+#light{
+    background-color: white;
+    color: #000;
+}
+
+
+#dark{
+    background-color: black;
+    color: white;
+}
+
+img{
+    cursor: pointer;
+}

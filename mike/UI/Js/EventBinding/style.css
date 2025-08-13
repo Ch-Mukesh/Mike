@@ -1,0 +1,13 @@
+input{
+    width: 50%;
+    height: 20px;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+code {
+      background: rgb(37, 35, 35);
+      color: wheat;
+      padding:  10px;
+      border-radius: 4px;
+    }
