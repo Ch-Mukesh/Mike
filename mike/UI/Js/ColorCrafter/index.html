@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color-Crafter</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        #main {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #1a1a2e;
+        }
+
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 18px;
+            margin-bottom: 20px;
+            
+        }
+
+        button.color-btn {
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        button.color-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        input[type="color"] {
+            width: 100%;
+            height: 40px;
+            border: none;
+            border-radius: 8px;
+            padding: 0;
+            cursor: pointer;
+        }
+
+        #text {
+            margin-top: 20px;
+            padding: 20px;
+            border: 2px dashed #ccc;
+            border-radius: 10px;
+            min-height: 100px;
+            font-size: larger;
+        }
+
+        #font-style h1 {
+            cursor: pointer;
+            display: inline-block;
+            margin: 5px;
+            padding: 5px 10px;
+            border-radius: 6px;
+            background: #f1f1f1;
+            transition: background 0.2s;
+        }
+
+        #font-style h1:hover {
+            background: #e2e2e2;
+        }
+
+        .download-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #e94560;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .download-btn:hover {
+            background: #d13f55;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="main">
+        <h1>🎨 Color Crafter</h1>
+
+        <!-- Font Colors -->
+        <div id="font-color">
+            <h2>Font Colors</h2>
+            <div class="color-grid">
+                <button class="color-btn" style="background-color: #FF6B6B;"
+                    onclick="changeFontColor('#FF6B6B')"></button>
+                <button class="color-btn" style="background-color: #FFD93D;"
+                    onclick="changeFontColor('#FFD93D')"></button>
+                <button class="color-btn" style="background-color: #6BCB77;"
+                    onclick="changeFontColor('#6BCB77')"></button>
+                <button class="color-btn" style="background-color: #4D96FF;"
+                    onclick="changeFontColor('#4D96FF')"></button>
+                <button class="color-btn" style="background-color: #D3C0F9;"
+                    onclick="changeFontColor('#D3C0F9')"></button>
+                <input type="color" oninput="changeFontColor(event.target.value)">
+            </div>
+        </div>
+
+        <!-- Background Colors -->
+        <div id="background-color">
+            <h2>Background Colors</h2>
+            <div class="color-grid">
+                <button class="color-btn" style="background-color: #FF6B6B;"
+                    onclick="changeBgColor('#FF6B6B')"></button>
+                <button class="color-btn" style="background-color: #FFD93D;"
+                    onclick="changeBgColor('#FFD93D')"></button>
+                <button class="color-btn" style="background-color: #6BCB77;"
+                    onclick="changeBgColor('#6BCB77')"></button>
+                <button class="color-btn" style="background-color: #4D96FF;"
+                    onclick="changeBgColor('#4D96FF')"></button>
+                <button class="color-btn" style="background-color: #D3C0F9;"
+                    onclick="changeBgColor('#D3C0F9')"></button>
+                <input type="color" oninput="changeBgColor(event.target.value)">
+            </div>
+        </div>
+
+        <!-- Background Images -->
+        <div id="background-image">
+            <h2>Background Images</h2>
+            <div class="color-grid">
+                <button class="color-btn" style="background-image: url('bg-1.jpg'); background-size: cover;"
+                    onclick="changeBgImage('bg-1.jpg')"></button>
+                <button class="color-btn" style="background-image: url('bg-2.jpg'); background-size: cover;"
+                    onclick="changeBgImage('bg-2.jpg')"></button>
+            </div>
+        </div>
+
+        <!-- Font Styles -->
+        <div id="font-style">
+            <h2>Font Styles</h2>
+            <h1 style="font-family: cursive;" onclick="changeFontFamily('cursive')">Hello</h1>
+            <h1 style="font-family: verdana;" onclick="changeFontFamily('verdana')">Hello</h1>
+            <h1 style="font-family: Georgia;" onclick="changeFontFamily('Georgia')">Hello</h1>
+            <h1 style="font-family: Impact;" onclick="changeFontFamily('Impact')">Hello</h1>
+            <h1 style="font-family: Gill Sans;" onclick="changeFontFamily('Gill Sans')">Hello</h1>
+        </div>
+
+        <!-- Editable Text -->
+        <div id="text" contenteditable="true">
+            Type your text here...
+        </div>
+
+        <!-- Download Button -->
+        <button class="download-btn" onclick="alert('We are working on this feature')">Download</button>
+    </div>
+
+    <script>
+        function changeFontColor(color) {
+            document.getElementById("text").style.color = color;
+        }
+        function changeBgColor(color) {
+            document.getElementById("text").style.background = color;
+        }
+        function changeBgImage(image) {
+            document.getElementById("text").style.backgroundImage = `url(${image})`;
+            document.getElementById("text").style.backgroundSize = "cover";
+        }
+        function changeFontFamily(font) {
+            document.getElementById("text").style.fontFamily = font;
+        }
+    </script>
+
+</body>
+
+</html>
