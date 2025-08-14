@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PassWord Validator</title>
+    <style>
+        input {
+            border: 2px solid black;
+            padding: 3px;
+            width: 50%;
+            height: 30px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>Type a password which should have 1 Uppercase letter, 1 lowercase letter, 1 special symbol(@ or _) and 1
+            number
+            and password must have 8 characters</h1>
+
+        <input type="password" id="pass" oninput="validatePassword(event.target.value)">
+
+        <h3 id="len"></h3>
+        <h3 id="lc"></h3>
+        <h3 id="uc"></h3>
+        <h3 id="ss"></h3>
+        <h3 id="num"></h3>
+    </center>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
