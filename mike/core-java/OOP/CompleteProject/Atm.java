@@ -15,7 +15,8 @@ public class Atm {
 
             // Dynamically load the corresponding bank card class
             Class cs = Class.forName(card);
-            AtmCard atm = (AtmCard) cs.getDeclaredConstructor().newInstance();
+            AtmCard atm = (AtmCard) cs.newInstance();
+            //AtmCard atm = (AtmCard) cs.getDeclaredConstructor().newInstance();
 
             while (true) {
                 System.out.println("\n1. Deposit\n2. Withdraw\n3. Check Balance\n4. Exit");
@@ -81,11 +82,11 @@ public class Atm {
             System.out.println("Access issue: " + e.getMessage());
         } catch (InstantiationException e) {
             System.out.println("Instantiation failed: " + e.getMessage());
-        } catch (NoSuchMethodException e) {
-            System.out.println("No suitable constructor found: " + e.getMessage());
-        } catch (InvocationTargetException e) {
-            System.out.println("Error while invoking constructor: " + e.getCause().getMessage());
-        } finally {
+        // } catch (NoSuchMethodException e) {
+        //     System.out.println("No suitable constructor found: " + e.getMessage());
+        // } catch (InvocationTargetException e) {
+        //     System.out.println("Error while invoking constructor: " + e.getCause().getMessage());
+        // } finally {
             scn.close();
         }
     }
