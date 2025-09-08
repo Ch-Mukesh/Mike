@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+
+    <script src="./node_modules/react/umd/react.development.js"></script>
+    <script src="./node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="./node_modules/@babel/standalone/babel.js"></script>
+    <script type="text/babel">
+
+        function Login() {
+            return (
+                <div className="d-flex justify-content-center align-items-center vh-100 ">
+                    <form className="d-flex flex-column border p-4 rounded shadow">
+                        <h6 className="text-center mb-3">User Login</h6>
+                        <dl>
+                            <dt className="form-text mb-1">Enter username:</dt>
+                            <dd>
+                                <input type="text" className="form-control" />
+                            </dd>
+
+                            <dt className="form-text mb-1">Enter your password:</dt>
+                            <dd>
+                                <input type="password" className="form-control" />
+                            </dd>
+                        </dl>
+                        <button className="btn btn-primary mt-3">Login</button>
+                    </form>
+                </div>
+            );
+        }
+
+
+
+        function Navbar() {
+            return (
+                <nav className="d-flex px-3 py-2 justify-content-between align-content-center">
+                    <div>
+                        <h4>Companyy</h4>
+                    </div>
+                    <div className="d-flex gap-4 ">
+                        <span>Home</span><span>About</span><span>Policy</span><span>Cart</span>
+                    </div>
+                </nav>
+            )
+        }
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        // root.render("Welcome to react 18x");
+        root.render(
+            <section>
+                <Navbar />
+                <hr className="my-0" />
+                <Login />
+            </section>);
+    </script>
+</head>
+
+<body>
+<noscript>Please Enable JavaScript!!</noscript>
+    <div id="root">
+
+    </div>
+</body>
+
+</html>
